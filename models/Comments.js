@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connections");
 
-class Comments extends Model {}
+class Comment extends Model {}
 
-Comments.init(
+Comment.init(
   {
       body: {
       type: DataTypes.STRING,
@@ -15,7 +15,7 @@ Comments.init(
       timestamps: false,
       freezeTableName: true,
       underscored: true,
-      modelName: "Posts",
+      modelName: "comments",
   });
 
-module.exports = Comments;
+module.exports = Comment;
