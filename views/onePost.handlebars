@@ -1,0 +1,60 @@
+<div>
+    <div class="card col-md-8 mx-auto" >
+        <article class= "card-body" id = "postsCard">
+            <h5 class="card-title"><a href="/dashboard/{{id}}">{{title}}</a></h5>
+            <div class="card-text text-wrap">
+                <p>{{body}}</p>
+                <p>Posted on: {{format_date}} by {{User.username}}</p>
+            </div>
+        </article>
+    </div>
+</div>
+
+{{#if post.Comments}}
+    <div>
+        <div class="card col-md-8 mx-auto" >
+            <article class= "card-body" id = "postsCard">
+                <h5 class="card-title">Comments</h5>
+            </article>
+        </div>
+        {{#each post.Comments}}
+            <div class="card col-md-8 mx-auto" >
+                <article class= "card-body" id = "postsCard">
+                    <h5 class="card-title"><a href="/dashboard/{{id}}">{{title}}</a></h5>
+                    <div class="card-text text-wrap">
+                        <p>{{body}}</p>
+                        <p>Posted on: {{format_date}} by {{User.username}}</p>
+                    </div>
+                </article>
+            </div>
+        {{/each}}
+    </div>
+{{/if}}
+
+<div class="card col-md-8 mx-auto" >
+    <article class= "card-body" id = "postsCard">
+        <h5 class="card-title">Add New Comment</h5>
+            <div class="card-text text-wrap">
+                <form id="new-comment-form" class= "col-md-8 mx-auto card-text text-wrap">
+                    <div class="row">
+                        <div class="input-field">
+                            <input disabled value= "{{post.id}}" id="disabled" type= "text" class= "form-input">
+                            <label for= "disabled" class= "form-label">Post Id</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field">
+                            <textarea id= "comment-body" type= "text" class= "form-input materialize-textarea">
+                            <label for= "comment-body" class= "form-label">Comment</label>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn waves-effect waves-light btn-large">Submit</button>
+                </form>
+            </div>
+    </article>
+</div>
+
+
+<script src="/js/comment.js"></script>
+

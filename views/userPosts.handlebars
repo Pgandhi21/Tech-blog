@@ -2,10 +2,10 @@
   {{#each posts}}
     <div class="card col-md-8 mx-auto" >
       <article class= "card-body" id = "postsCard">
-        <h5 class="card-title"><a href="/dashboard/{{id}}">{{title}}</a></h5>
+        <h5 class="card-title"><a href="/dashboard/edit/{{id}}">{{title}}</a></h5>
         <div class="card-text text-wrap">
           <p>{{body}}</p>
-          <p>Posted on: {{format_date}} by {{User.username}}</p>
+          <p>Posted on: {{format_date}}</p>
         </div>
       </article>
     </div>
