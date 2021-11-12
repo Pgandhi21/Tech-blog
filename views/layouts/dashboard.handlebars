@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tech Blog</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
 </head>
 
@@ -15,19 +16,31 @@
         <a href="/" class="brand-logo right">The Tech Blog</a>
             <ul id="nav-mobile" class="left hide-on-med-and-down">
                 <li><a href="/">Home</a></li>
-                <li><a href="#" id = "logout-Link">Logout</a></li>
+                <li><a href="#" id = "logoutLink">Logout</a></li>
                 <li><a href="/dashboard">Dashboard</a></li>
             </ul>
         </div>
     </nav>
     
     <header>
-        <h1>Welcome to Your Dashboard</h1>
+        <h1 class= "center-align">Welcome to Your Dashboard</h1>
+        <div class= "center-align">
+            <a href="/dashboard/new" class="btn waves-effect waves-light btn-large center-align"><i class="material-icons right">add</i>New Post</a>
+        </div>
     </header>
 
-    <div class="container">
+    <main class="container">
         {{{body}}}
-    </div>
+    </main>
     
+    <footer class="page-footer">
+        <div class="footer-copyright">
+            <div class="container center-align">
+                &copy; The Tech Blog Folks
+            </div>
+        </div>
+    </footer>
+
 </body>
+<script src="/js/logout.js"></script>
 </html>

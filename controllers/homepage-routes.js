@@ -9,7 +9,10 @@ router.get("/", async (req, res) => {
 
     const postData = postInfo.map((post) => post.get({ plain: true }));
 
-    res.render("posts", { postData });
+    res.render("posts", {
+      layout: "homepage",
+      postData,
+    });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -30,7 +33,10 @@ router.get("/posts/:id", async (req, res) => {
     if (postInfo) {
       const postData = postInfo.get({ plain: true });
 
-      res.render("onePost", { postData });
+      res.render("onePost", {
+        layout: "homepage",
+        postData,
+      });
     } else {
       res.status(404).json(err);
     }
@@ -45,7 +51,8 @@ router.get("/login", (req, res) => {
     return;
   }
 
-  res.render("login");
+  res.render("login", {
+    layout: "homepage"});
 });
 
 router.get("/signup", (req, res) => {
@@ -54,7 +61,8 @@ router.get("/signup", (req, res) => {
     return;
   }
 
-  res.render("signup");
+  res.render("signup", {
+    layout: "homepage"});
 });
 
 module.exports = router;

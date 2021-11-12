@@ -5,17 +5,14 @@ class Comment extends Model {}
 
 Comment.init(
   {
-      body: {
+    body: {
       type: DataTypes.STRING,
       allowNull: false,
-    }
+    },
   },
   {
-      sequelize
-      timestamps: false,
-      freezeTableName: true,
-      underscored: true,
-      modelName: "comments",
-  });
+    sequelize,
+  }
+);
 
 module.exports = Comment;
