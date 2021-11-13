@@ -52,7 +52,8 @@ router.get("/login", (req, res) => {
   }
 
   res.render("login", {
-    layout: "homepage"});
+    layout: "homepage",
+  });
 });
 
 router.get("/signup", (req, res) => {
@@ -62,7 +63,8 @@ router.get("/signup", (req, res) => {
   }
 
   res.render("signup", {
-    layout: "homepage"});
+    layout: "homepage",
+  });
 });
 
 module.exports = router;

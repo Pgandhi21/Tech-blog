@@ -1,8 +1,7 @@
 const createComment = async function (event) {
   event.preventDefault();
 
-  const commentId = document.querySelector('input[name="post-id"]').value;
-  const body = document.querySelector('textarea[name="comment-body"]').value;
+  const body = document.querySelector("#comment-body").value;
 
   if (body) {
     await fetch("/api/comment", {
@@ -17,4 +16,4 @@ const createComment = async function (event) {
   }
 };
 
-document.querySelector("form id").addEventListener("submit", createComment);
+document.querySelector("#commentBtn").addEventListener("submit", createComment);

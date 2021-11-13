@@ -1,29 +1,24 @@
-<div class="card col-md-8 mx-auto" >
-    <article class= "card-body" id = "postsCard">
-        <h5 class="card-title center-align">Create New Post</h5>
-            <div class="row card-text text-wrap">
-                <form id="new-post-form">
-                    <div class="row">
-                        <div class="col m8">
-                            Title:
-                            <div class="input-field inline">
-                                <textarea id= "post-title" type= "text" class= "form-input materialize-textarea"></textarea>
-                                <label for= "post-title"></label>
-                            </div>
-                        </div>
-                        
+<div class="container" >
+    <article class="row">
+        <h5 class="center-align">New Post</h5>
+            <div>
+                <form id="new-post-form" class="col s12">
+                    <div class="col s12">
+                        Title:
+                        <div class="input-field">
+                            <textarea id= "post-title" type= "text" class= "form-input materialize-textarea"></textarea>
+                            <label for= "post-title"></label>
+                        </div>                        
                     </div>
-                    <div class="row">
-                        <div class="col m8">
-                            Content:
-                            <div class="input-field inline">
-                                <textarea id= "post-body" type= "text" class= "form-input materialize-textarea"></textarea>
-                                <label for= "post-body" class= "form-label"></label>
-                            </div>
+                    <div class="col s12">
+                        Content:
+                        <div class="input-field">
+                            <textarea id= "post-body" type= "text" class= "form-input materialize-textarea"></textarea>
+                            <label for= "post-body"></label>
                         </div>
                     </div>
                     <div class= "center-align">
-                        <button type="submit" class="btn waves-effect waves-light btn-large center-align">Create Post</button>
+                        <button type="submit" class="btn waves-effect waves-light btn-small center-align">Create Post</button>
                     </div>
                 </form>
             </div>
@@ -31,4 +26,4 @@
 </div>
 
 
-<script src="./js/newPost.js"></script>
+<script src="/js/newPost.js"></script>

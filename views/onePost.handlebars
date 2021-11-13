@@ -1,55 +1,44 @@
-<div>
-    <div class="card col-md-8 mx-auto" >
-        <article class= "card-body" id = "postsCard">
-            <h5 class="card-title"><a href="/dashboard/{{id}}">{{title}}</a></h5>
-            <div class="card-text text-wrap">
-                <p>{{body}}</p>
-                <p>Posted on: {{format_date}} by {{User.username}}</p>
-            </div>
-        </article>
-    </div>
-</div>
-
-{{#if post.Comments}}
-    <div>
-        <div class="card col-md-8 mx-auto" >
-            <article class= "card-body" id = "postsCard">
-                <h5 class="card-title center-align" >Comments</h5>
-            </article>
+<div class="container" >
+    <article class="row">
+        <h6 class="center-align"><a href="/dashboard/{{id}}">{{postData.title}}</a></h6>
+        <div class="text-wrap">
+            <p>{{postData.body}}</p>
+            <p>Posted on: {{format_date postData.createdAt}} by {{postData.User.username}}</p>
         </div>
-        {{#each post.Comments}}
-            <div class="card col-md-8 mx-auto" >
-                <article class= "card-body" id = "postsCard">
-                    <h5 class="card-title"><a href="/dashboard/{{id}}">{{title}}</a></h5>
-                    <div class="card-text text-wrap">
-                        <p>{{body}}</p>
+    </article>
+</div>
+<br> </br>
+{{#if postData.Comments}}
+        <div class="row" >
+            <h5 class="center-align" >Comments</h5>
+        </div>
+        {{#each postData.Comments}}
+            <div class="container" >
+                <article class="row">
+                    <div class="text-wrap">
+                        <p>{{postData.Comments.body}}</p>
                         <p>Posted on: {{format_date createdAt}} by {{User.username}}</p>
                     </div>
                 </article>
             </div>
         {{/each}}
-    </div>
 {{/if}}
 
-<div class="card col-md-8 mx-auto" >
-    <article class= "card-body" id = "postsCard">
-        <h5 class="card-title center-align">Add New Comment</h5>
-            <div class="card-text text-wrap">
-                <form id="new-comment-form" class= "col-md-8 mx-auto card-text text-wrap">
-                    <div class="row">
+<div class="container" >
+    <article class="row">
+        <h5 class="center-align">Add New Comment</h5>
+            <div>
+                <form id="new-comment-form" class="col s12">
+                    <div class="col s12">
+                        Comment:
                         <div class="input-field">
-                            <input disabled value= "{{post.id}}" id="disabled" type= "text" class= "form-input">
-                            <label for= "disabled" class= "form-label">Post Id</label>
+                            <textarea id= "comment-body" type= "text" class= "form-input materialize-textarea"></textarea>
+                            <label for= "comment-body"></label>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="input-field">
-                            <textarea id= "comment-body" type= "text" class= "form-input materialize-textarea">
-                            <label for= "comment-body" class= "form-label">Comment</label>
-                        </div>
+                    <div class= "center-align">
+                        <button type="submit" id= "commentBtn" class="btn waves-effect waves-light btn-small">Add Comment</button>
                     </div>
-
-                    <button type="submit" class="btn waves-effect waves-light btn-large center-align">Submit</button>
                 </form>
             </div>
     </article>

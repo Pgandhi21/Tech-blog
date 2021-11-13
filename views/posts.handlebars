@@ -1,12 +1,12 @@
 <div>
-  {{#each posts}}
-    <div class="card col-md-8 mx-auto" >
-      <article class= "card-body" id = "postsCard">
-        <h5 class="card-title"><a href="/dashboard/{{id}}">{{title}}</a></h5>
-        <div class="card-text text-wrap">
-          <p>{{body}}</p>
-          <p>Posted on: {{format_date createdAt}} by {{User.username}}</p>
-        </div>
+  {{#each postData}}
+    <div class="container" >
+      <article class="row">
+          <h6 class="center-align"><a href="/posts/{{id}}">{{title}}</a></h6>
+          <div class="text-wrap">
+              <p>{{body}}</p>
+              <p>Posted on: {{format_date createdAt}} by {{User.username}}</p>
+          </div>
       </article>
     </div>
   {{/each}}
