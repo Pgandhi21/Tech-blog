@@ -24,7 +24,7 @@ router.put("/:id", withAuth, async (req, res) => {
     });
 
     if (updatedPost > 0) {
-      res.status(200);
+      res.status(200).json({ ok: true });
     } else {
       res.status(404).json(err);
     }
@@ -42,7 +42,7 @@ router.delete("/:id", withAuth, async (req, res) => {
     });
 
     if (updatedPost > 0) {
-      res.status(200);
+      res.status(200).json({ ok: true });
     } else {
       res.status(404).json(err);
     }
